@@ -16,7 +16,8 @@ public class OrganismWorm extends OrganismBase {
     public void performTimeStep(){
         super.performTimeStep();
 
-        //worm does stuff here
+        //output worm stats for demonstration
+        System.out.println("-Worm-\n" + "Age: " + super.getAge() + "\n");
     }
 
 

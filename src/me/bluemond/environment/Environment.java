@@ -86,7 +86,7 @@ public class Environment
     // register a new organism in the environment
     public void registerOrganism
     (EnvironmentalOrganism organism){
-
+        organismRegistry.add(organism);
     }
 
 
