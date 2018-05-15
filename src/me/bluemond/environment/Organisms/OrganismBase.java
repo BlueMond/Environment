@@ -5,34 +5,41 @@ import me.bluemond.environment.EnvironmentalOrganism;
 
 
 
-public class OrganismBase implements EnvironmentalOrganism {
+public abstract class OrganismBase implements EnvironmentalOrganism {
 
 
     //ranges from 0 to 1 (0-100% health condition)
-    double health;
+    private double health;
     //ranges from 0 to 1 (0-100% fed)
-    double fed;
+    private double fed;
     //age of organism (in steps)
-    int age;
+    private int age;
     //movement speed of organism (arbitrary double precision unit)
-    double speed;
+    private double speed;
+    //species classification (mandatory)
+    private final String species;
 
 
 
 
+    //constructors
 
-    //modifying constructor
-    public OrganismBase(double health, double fed, double speed){
+    public OrganismBase(double health, double fed, double speed, String species){
         this.health = health;
         this.fed = fed;
         this.speed = speed;
+        this.species = species;
         age = 0;
     }
 
-    //default constructor
-    public OrganismBase(){
-        this(1, 0.5, 1);
+
+    public OrganismBase(String species){
+        this(1, 0.5, 1, species);
+
     }
+
+    //END constructors
+
 
 
 
@@ -47,9 +54,49 @@ public class OrganismBase implements EnvironmentalOrganism {
 
 
 
+
     //getters and setters
 
-    public
+
+    public void setHealth(double health) {
+        this.health = health;
+    }
+
+    public void setFed(double fed) {
+        this.fed = fed;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public void setSpeed(double speed) {
+        this.speed = speed;
+    }
+
+
+
+    public double getHealth() {
+        return health;
+    }
+
+    public double getFed() {
+        return fed;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public double getSpeed() {
+        return speed;
+    }
+
+    public String getSpecies() {
+        return species;
+    }
+
+    //END getters and setters
 }
 
 

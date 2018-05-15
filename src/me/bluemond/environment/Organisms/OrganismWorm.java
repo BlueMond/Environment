@@ -1,18 +1,51 @@
 package me.bluemond.environment.Organisms;
 
+
+
+
 public class OrganismWorm extends OrganismBase {
 
-    //ranges from 0 to 1 (0-100% health condition)
-    double health;
-    //ranges from 0 to 1 (0-100% fed)
-    double fed;
-    //length of worm
-    double length;
-    //age of worm (in steps)
-    int age;
+
+    //length of worm (in inches)
+    private double length;
 
 
 
 
+    @Override
+    public void performTimeStep(){
+        super.performTimeStep();
 
+        //worm does stuff here
+    }
+
+
+
+
+    //constructors
+
+    public OrganismWorm(double health, double fed, double speed) {
+        super(health, fed, speed, "Worm");
+    }
+
+    public OrganismWorm() {
+        this(1, 0.5, 1);
+    }
+
+    //END constructors
+
+
+
+
+    //getters and setters
+
+    public void setLength(double length) {
+        this.length = length;
+    }
+
+    public double getLength() {
+        return length;
+    }
+
+    //END getters and setters
 }

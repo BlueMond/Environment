@@ -6,21 +6,27 @@ import java.util.ArrayList;
 
 // handles environmental registries and consolidation of environmental variables
 
+//Run Environment (or TimeDriver?) on thread separate from User-Interface
 
 public class Environment
 {
-    // turn registries into single arraylist that can be added to or removed from with default registries (organism Registry) being added upon instantiation method
+
+    // turn registries into single arraylist that can be added to or removed from with default registries
+    // (organism Registry) being added upon instantiation method
 
     // organism registry (to be moved)
     private ArrayList<EnvironmentalOrganism> organismRegistry;
-
+    // instance of TimeDriver class
     public TimeDriver timeDriver;
 
+
+    //constructor
     public Environment(){
         //instantiate environmental variables
         organismRegistry = new ArrayList<EnvironmentalOrganism>();
         timeDriver = new TimeDriver();
     }
+
 
 
     // drives the cycle of time in the environment, step-by-step
@@ -29,8 +35,11 @@ public class Environment
     {
         //standard measure of time in environment
         private int steps;
+        //status of driver
         private boolean started;
+
         public final int MAX_STEPS = 380;
+
 
         public TimeDriver(){
             steps = 0;
@@ -58,13 +67,14 @@ public class Environment
         }
 
         private void performStep(){
-            //cycle through registries and perform time step on each object
             steps++;
-
             //debug line
             System.out.println("step: " + steps);
         }
 
+        private void cycleRegisteredOrganisms(){
+
+        }
 
     }
 
