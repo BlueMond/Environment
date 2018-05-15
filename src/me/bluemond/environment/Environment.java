@@ -70,10 +70,14 @@ public class Environment
             steps++;
             //debug line
             System.out.println("step: " + steps);
+
+            cycleRegisteredOrganisms();
         }
 
         private void cycleRegisteredOrganisms(){
-
+            for(EnvironmentalOrganism organism : organismRegistry){
+                organism.performTimeStep();
+            }
         }
 
     }
