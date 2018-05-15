@@ -66,8 +66,9 @@ public class Environment
 
         private void performStep(){
             steps++;
+
             //debug line
-            System.out.println("step: " + steps);
+            System.out.println("\n-------------\n" + "step: " + steps + "\n");
 
             cycleRegisteredOrganisms();
         }
