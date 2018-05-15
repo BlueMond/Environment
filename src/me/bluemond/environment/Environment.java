@@ -44,8 +44,6 @@ public class Environment
         public TimeDriver(){
             steps = 0;
             started = false;
-
-            start();
         }
 
         public void start(){
@@ -93,5 +91,6 @@ public class Environment
     public void shutdown(){
         timeDriver.stop();
     }
+    public void startup() { timeDriver.start(); }
 
 }

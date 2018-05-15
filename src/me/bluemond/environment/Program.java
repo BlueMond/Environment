@@ -17,6 +17,9 @@ public class Program
         //register the created worm to the environment
         environment.registerOrganism(testWorm);
 
+        //start the environmental processing
+        environment.startup();
+
         printArgs(args);
 
     }
